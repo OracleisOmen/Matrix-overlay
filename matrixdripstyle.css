@@ -1,0 +1,50 @@
+    /* Container for the whole overlay */
+    .matrix-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.85); /* Semi-transparent black background */
+    }
+
+    /* Style for the cascading text */
+    .cascading-text {
+      color: #0f0; /* Bright green color */
+      font-family: 'Courier New', monospace; /* Monospaced font for a digital look */
+      font-size: 16px;
+      line-height: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none; /* Ensures clicks pass through the overlay */
+    }
+
+    /* Animation for the cascading effect */
+    @keyframes cascade {
+      from { top: -100%; }
+      to { top: 100%; }
+    }
+
+    .cascading-text {
+      animation: cascade 10s linear infinite;
+    }
+
+    Save the CSS file in the same directory as your HTML file.
+
+Step 3: Add Cascading Text to HTML
+
+Return to your matrix-overlay.html file and add some divs with the class cascading-text. Each of these divs will represent a column of cascading Matrix-style code.
+
+    Inside the matrix-overlay div, add several div elements with the class cascading-text:
+
+    html
+
+<div class="matrix-overlay">
+    <div class="cascading-text">1010101010</div>
+    <div class="cascading-text">0101010101</div>
+    <!-- Repeat this with different random numbers and letters -->
+</div>
